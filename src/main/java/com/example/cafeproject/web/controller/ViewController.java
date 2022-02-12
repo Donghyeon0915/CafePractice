@@ -2,6 +2,7 @@ package com.example.cafeproject.web.controller;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -13,12 +14,7 @@ public class ViewController {
     }
 
     @GetMapping("/articles")
-    public String articles(){
-        return "articles/article_index";
-    }
-
-    @GetMapping("/signup")
-    public String signup(){
-        return "login/loginForm";
+    public String articles(Model model){
+        return "/articles/articleIndex";
     }
 }

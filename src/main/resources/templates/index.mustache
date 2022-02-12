@@ -2,21 +2,24 @@
 <link href="/css/login.css" rel="stylesheet">
 
 <div class="container">
+
+    <form action="/user/login" method="post">
     <div class = "login_form">
         <div class="title">Login</div>
         <div class="input-box underline">
-            <input type="text" id = "userId" placeholder="Enter Your Email" required>
+            <input type="text" id = "userId" name="userId" placeholder="Enter Your Id" required>
             <div class="underline"></div>
         </div>
         <div class="input-box">
-            <input type="password" id = "userPassword" placeholder="Enter Your Password" required>
+            <input type="password" id = "userPassword" name="userPw" placeholder="Enter Your Password" required>
             <div class="underline"></div>
         </div>
 
         <div class="input-box button" style="float: left">
-            <input type="submit" value="Continue" id = "login_input" onclick="login()">
+            <input type="submit" value="Continue" id = "login_input" >
         </div>
     </div>
+    </form>
 
     <div class="option">
         <a class ="underline"
@@ -43,11 +46,11 @@
                 <div class = "login_form">
                     <div class="title">Sign Up</div>
                     <div class="input-box underline">
-                        <input type="text" id = "sign_up_nickname" placeholder="Enter Your Nickname" required>
+                        <input type="text" id = "sign_up_nickname"placeholder="Enter Your Nickname" required>
                         <div class="underline"></div>
                     </div>
                     <div class="input-box underline">
-                        <input type="text" id = "sign_up_id" placeholder="Enter Your Email" required>
+                        <input type="text" id = "sign_up_id" placeholder="Enter Your Id" required>
                         <div class="underline"></div>
                     </div>
                     <div class="input-box">

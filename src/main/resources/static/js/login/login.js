@@ -4,11 +4,11 @@ function login(){
     const userPw = document.querySelector("#userPassword");
 
     const userData = {
-        id: userId.value,
-        password: userPw.value
+        userId: userId.value,
+        userPw: userPw.value
     };
 
-    console.log("id = " + userData.id + " pw = " + userData.password);
+    console.log("id = " + userData.userId + " pw = " + userData.userPw);
 
     const url = "/api/user/login";
     fetch(url, {
@@ -25,7 +25,6 @@ function login(){
             alert("로그인 실패");
             userId.value = "";
             userPw.value = "";
-
         }
     });
 }
