@@ -1,7 +1,7 @@
 {{>layout/header}}
 <link href="/css/login.css" rel="stylesheet">
 
-<div class="container">
+<div class="container login_body">
 
     <form action="/user/login" method="post">
     <div class = "login_form">
@@ -25,7 +25,7 @@
         <a class ="underline"
             id = "sign_up_tag"
            data-bs-toggle="modal"
-           data-bs-target="#comment-edit-modal">
+           data-bs-target="#sign_up_modal">
             Sign Up</a>
         or Connect With Social Media
 
@@ -39,9 +39,9 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="comment-edit-modal" tabindex="-1">
+<div class="modal fade" id="sign_up_modal" tabindex="-1">
     <div class="modal-dialog">
-        <div class = "modal-content container">
+        <div class = "modal-content container" id = "sign_up_modal">
             <div class="modal-body">
                 <div class = "login_form">
                     <div class="title">Sign Up</div>

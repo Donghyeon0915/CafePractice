@@ -6,11 +6,12 @@ import lombok.*;
 import javax.persistence.*;
 
 
-@ToString
+
 @Getter
 @Builder
-@AllArgsConstructor
+@ToString
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Comment {
 

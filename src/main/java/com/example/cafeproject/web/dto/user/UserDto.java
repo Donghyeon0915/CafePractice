@@ -1,4 +1,4 @@
-package com.example.cafeproject.web.dto;
+package com.example.cafeproject.web.dto.user;
 
 
 import com.example.cafeproject.web.Enum.Role;

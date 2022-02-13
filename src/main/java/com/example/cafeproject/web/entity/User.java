@@ -2,15 +2,14 @@ package com.example.cafeproject.web.entity;
 
 
 import com.example.cafeproject.web.Enum.Role;
-import com.example.cafeproject.web.dto.UserDto;
+import com.example.cafeproject.web.dto.user.UserDto;
 import lombok.*;
 
 import javax.persistence.*;
 
-
-@ToString
 @Getter
 @Builder
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity

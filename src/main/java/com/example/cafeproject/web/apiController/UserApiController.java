@@ -1,17 +1,15 @@
 package com.example.cafeproject.web.apiController;
 
 
-import com.example.cafeproject.web.Enum.Role;
-import com.example.cafeproject.web.dto.UserDto;
-import com.example.cafeproject.web.dto.UserLoginDto;
-import com.example.cafeproject.web.entity.User;
+import com.example.cafeproject.web.dto.user.UserDto;
 import com.example.cafeproject.web.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 // 컨트롤러는 서비스에게 요청을 전달하고 응답을 반환
 @Slf4j
@@ -23,29 +21,11 @@ public class UserApiController {
         this.userService = userService;
     }
 
-    @PostMapping("/api/user/login")
-    public ResponseEntity<UserLoginDto> login(@RequestBody UserLoginDto requestDto){
-        //UserLoginDto requestDto = new UserLoginDto(userId,userPw, Role.USER);
-
-        log.info("UserApiController : " + requestDto.toString());
-
-        UserLoginDto target = userService.login(requestDto);
-
-
-        //model.addAttribute("userId", target.getUserId());
-        //model.addAttribute("userPw", target.getUserPw());
-
-        // 오류는 Service에서 처리가 되어서 오므로 컨트롤러에선 OK만 반환
-        return ResponseEntity.status(HttpStatus.OK).body(target);
-    }
-
     @PostMapping("/api/user/signup")
-    public ResponseEntity<UserDto> signUpUser(@RequestBody UserDto requestDto){
+    public ResponseEntity<UserDto> signUpUser(@RequestBody UserDto requestDto, HttpServletResponse response){
         UserDto target = userService.signUp(requestDto);
 
-        return target != null ?
-                ResponseEntity.status(HttpStatus.OK).body(target) :
-                ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        return ResponseEntity.status(HttpStatus.OK).body(target);
     }
 }
 

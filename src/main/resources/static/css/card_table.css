@@ -41,6 +41,7 @@ img{
 
 /*=====-------------------------- DRAG and DROP --------------------------=====*/
 .drop, .drop__container{
+    height: 90%;
     display: block;
 }
 
@@ -55,6 +56,7 @@ img{
     row-gap: 3rem;
     padding: 2rem;
     justify-content: center;
+    overflow: auto;
     /* box-shadow: 4px 4px 16px #E1E1E1; */
 }
 
@@ -87,7 +89,7 @@ img{
     color: var(--first-color);
 }
 
-.drop__proffession{
+.drop__proffession, div > h1{
     font-size: var(--smaller-font-size);
     color: var(--first-color-light)
 }
@@ -102,6 +104,9 @@ img{
     color: var(--first-color);
 }
 
+.drop__title{
+    margin-left: 2rem;
+}
 /*-------------------------- Class name for the chosen item --------------------------*/
 
 .sortable-chosen{

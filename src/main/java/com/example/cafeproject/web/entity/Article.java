@@ -2,6 +2,7 @@
 package com.example.cafeproject.web.entity;
 
 
+import com.example.cafeproject.web.dto.article.ArticleCreateDto;
 import lombok.*;
 
 import javax.persistence.*;
@@ -33,7 +34,13 @@ public class Article {
     @Column
     private Long likes;
 
-    @ManyToOne
-    @JoinColumn(name = "user_nickname")
-    private User user;
+    public static Article createArticle(ArticleCreateDto dto){
+        return Article.builder()
+                .author(dto.getAuthor())
+                .title(dto.getTitle())
+                .content(dto.getContent())
+                .view(0L)
+                .likes(0L)
+                .build();
+    }
 }

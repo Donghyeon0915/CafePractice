@@ -1,10 +1,8 @@
-package com.example.cafeproject.web.dto;
+package com.example.cafeproject.web.dto.user;
 
 
 import com.example.cafeproject.web.entity.User;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @ToString
 @Getter

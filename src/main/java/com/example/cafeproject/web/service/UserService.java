@@ -1,8 +1,8 @@
 package com.example.cafeproject.web.service;
 
 
-import com.example.cafeproject.web.dto.UserDto;
-import com.example.cafeproject.web.dto.UserLoginDto;
+import com.example.cafeproject.web.dto.user.UserDto;
+import com.example.cafeproject.web.dto.user.UserLoginDto;
 import com.example.cafeproject.web.entity.User;
 import com.example.cafeproject.web.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -21,17 +21,16 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public UserLoginDto login(UserLoginDto requestDto){
+    public UserDto login(UserLoginDto requestDto){
         log.info(requestDto.toString());
         User target = userRepository.findByUserId(requestDto.getUserId())
                 .orElseThrow(()->new IllegalArgumentException("등록되지 않은 회원입니다."));
 
-        // throw로 던져줘야함
         // userId로 target을 찾기 때문에 비밀번호만 같은지 체크하면 됨
         if(!target.getUserPw().equals(requestDto.getUserPw()))
                throw new IllegalArgumentException("비밀번호가 일치하지 않습니다.");
 
-        return UserLoginDto.createUserLoginDto(target);
+        return UserDto.createUserDto(target);
     }
 
     @Transactional

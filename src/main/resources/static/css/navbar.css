@@ -29,7 +29,7 @@ nav{
 }
 
 body{
-    min-height: 100vh;
+    height: 100%;
     background-color: var(--body-color);
     transition: var(--tran-05);
 }
