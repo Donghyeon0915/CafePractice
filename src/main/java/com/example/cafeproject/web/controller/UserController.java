@@ -17,22 +17,7 @@ public class UserController {
     private final UserService userService;
 
     public UserController(UserService userService) {this.userService = userService;}
-
-
-/*    @PostMapping("/user/login")
-    public String login(UserLoginDto requestDto, Model model){
-        //UserLoginDto requestDto = new UserLoginDto(userId,userPw, Role.USER);
-
-        log.info("user 컨트롤러 : " + requestDto.toString());
-
-        UserLoginDto target = userService.login(requestDto);
-
-        model.addAttribute("userId", target.getUserId());
-        model.addAttribute("userPw", target.getUserPw());
-
-        return "/articles/articleIndex";
-    }*/
-
+    
     @PostMapping("/user/login")
     public String login(UserLoginDto requestDto, HttpServletResponse response){
         log.info("user 컨트롤러 : " + requestDto.toString());

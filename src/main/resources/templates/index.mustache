@@ -6,7 +6,7 @@
 
 <div class="container login_body">
 
-    <form action="/user/login" method="post">
+    <!-- <form action="/user/login" method="post"> -->
     <div class = "login_form">
         <div class="title">Login</div>
         <div class="input-box underline">
@@ -19,10 +19,10 @@
         </div>
 
         <div class="input-box button" style="float: left">
-            <input type="submit" value="Continue" id = "login_input" >
+            <input type="submit" value="Continue" id = "login_input">
         </div>
     </div>
-    </form>
+    <!-- </form> -->
 
     <div class="option">
         <a class ="underline"
@@ -70,6 +70,13 @@
     </div>
 </div>
 
+<script>
+    {
+        const loginBtn = document.querySelector("#login_input");
+
+        loginBtn.addEventListener("click", () => login());
+    }
+</script>
 <script src="/js/login/signup.js"></script>
 <script src="/js/login/login.js"></script>
 {{>layout/footer}}

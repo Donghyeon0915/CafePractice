@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
@@ -22,10 +23,16 @@ public class UserApiController {
         this.userService = userService;
     }
 
-/*    @PostMapping("/api/user/login")
-    public ResponseEntity<UserLoginDto> login(){
+    @PostMapping("/api/user/login")
+    public ResponseEntity<UserDto> login(@RequestBody UserLoginDto requestDto, HttpServletResponse response){
+        UserDto target = userService.login(requestDto);
 
-    }*/
+        Cookie userCookie = new Cookie("loginUser", target.getNickname());
+        userCookie.setPath("/");
+        response.addCookie(userCookie);
+
+        return ResponseEntity.status(HttpStatus.OK).body(target);
+    }
 
 
     @PostMapping("/api/user/signup")
