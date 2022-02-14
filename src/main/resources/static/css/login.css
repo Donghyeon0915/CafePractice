@@ -10,6 +10,7 @@ body{
     display: grid; /* grid */
     /*height: 100vh;*/
     width: 100%;
+    margin-top: 10rem;
     place-items: center;
     background: linear-gradient(to right, #005999 0%, #8bd2e5 100%);
 }

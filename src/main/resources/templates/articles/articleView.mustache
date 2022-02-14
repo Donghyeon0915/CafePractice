@@ -1,0 +1,52 @@
+{{>layout/header}}
+
+<link rel="stylesheet" type="text/css" href="/css/article/articleViewpage.css">
+</head>
+
+<body>
+
+{{>layout/navbar}}
+	<section class="main-content">
+		<div class="view__container">
+			<h1 class="text-center text-uppercase">Job Card</h1>
+			<br>
+			<br>
+
+			<div class="row">
+				<div class="col-sm-6 offset-sm-3">
+					<div class="job-card">
+						<div class="job-card__content">
+							<div class="job-card__content-top">
+								<div class="job-card_img">
+									<img src="/img/slack.svg" alt="Company Logo">
+								</div>
+								<div class="job-card_info">
+									<a href="#!" class="float-right">
+										<i class="fa fa-heart-o"></i>
+									</a>
+									<a href="#!" class="job-card_company">
+										<h4 class="mb-1 d-inline-block">Slack</h4>
+									</a>
+									<p class="text-muted mb-0">London, UK</p>
+								</div>
+							</div>
+							<div class="job-card_content-mid">
+								<h4>Sr. Userexperience Designer</h4>
+								<p class="mb-0">$75k - $105k</p>
+								<div class="job-card_job-type">
+									<span class="job-label">Full time</span>
+									<span class="job-label">Senior</span>
+									<span class="job-label">UX/UI</span>
+								</div>
+							</div>
+						</div>
+						<div class="job-card__footer">
+							<p class="mb-1 mt-1 text-muted">Posted: 2 days ago</p>
+							<button class="btn btn-primary">Apply</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{{>layout/footer}}

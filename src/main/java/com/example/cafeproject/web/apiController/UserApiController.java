@@ -22,7 +22,7 @@ public class UserApiController {
     }
 
     @PostMapping("/api/user/signup")
-    public ResponseEntity<UserDto> signUpUser(@RequestBody UserDto requestDto, HttpServletResponse response){
+    public ResponseEntity<UserDto> signUpUser(@RequestBody UserDto requestDto){
         UserDto target = userService.signUp(requestDto);
 
         return ResponseEntity.status(HttpStatus.OK).body(target);

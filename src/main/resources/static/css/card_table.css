@@ -31,7 +31,9 @@ h1{
 
 a{
     text-decoration: none;
+    outline: none;
 }
+
 
 img{
     max-width: 100%;
@@ -39,6 +41,9 @@ img{
 }
 
 
+.home{
+    height: 95%;
+}
 /*=====-------------------------- DRAG and DROP --------------------------=====*/
 .drop, .drop__container{
     height: 90%;
@@ -47,6 +52,7 @@ img{
 
 .drop{
     /*height: 100vh;*/
+
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
@@ -75,6 +81,11 @@ img{
     box-shadow: 4px 4px 10px #b4b4b4,
     -2px -2px 16px #fff;
     border-radius: 1.5rem;
+}
+
+.drop__card:hover{
+    cursor: pointer;
+    transform: scale(1.03);
 }
 
 .drop__img{

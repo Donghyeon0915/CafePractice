@@ -6,6 +6,7 @@ import lombok.*;
 
 @ToString
 @Getter
+@Setter
 @AllArgsConstructor
 @Builder
 public class UserLoginDto {

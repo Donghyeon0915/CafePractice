@@ -1,4 +1,8 @@
 {{>layout/header}}
+<link rel="stylesheet" src="/css/article/articleViewpage.css">
+</head>
+<body>
+
 {{>layout/navbar}}
 
 <section class="home">
@@ -13,7 +17,7 @@
         <div class="drop__container" id='drop-item'>
 
         {{#articles}}
-            <div class="drop__card">
+            <div class="drop__card" onclick="viewArticle()">
                 <div class="drop__data">
                     <img src="image/user.png" alt="" class="drop__img">
                     <div>
@@ -25,7 +29,7 @@
                         <h1>[{{id}}] {{title}}</h1>
                     </div>
                 </div>
-
+                <input type="hidden"  id = "article_id" value = "{{id}}">
                 <div>
                     <a href="" class="drop__soc"><i class='bx bxl-instagram'></i></a>
                     <a href="" class="drop__soc"><i class='bx bxl-facebook'></i></a>
@@ -66,8 +70,6 @@
             </div>
         </div>
     </div>
-
-
 </section>
 
 <script src="/js/article/article.js"></script>
