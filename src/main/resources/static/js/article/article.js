@@ -29,22 +29,10 @@ function createArticle(){
     });
 }
 
-function viewArticle(){
+function viewArticle(event){
 
-    const data = {
-        articleId: document.querySelector("#article_id").value,
-        userNickname: document.querySelector("#user_nickname").value
-    };
+    const target = event.currentTarget;
+    const articleId = target.querySelector("#article_id").value;
 
-    const url = "/articles/view";
-    fetch(url, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).then(response =>{
-       if(response.ok) alert("게시글 조회 성공");
-       else alert("게시글 조회 실패");
-    });
+    window.location.href = "/articles/" + articleId;
 }

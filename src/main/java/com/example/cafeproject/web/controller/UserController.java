@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+
 @Slf4j
 @Controller
 public class UserController {
@@ -31,13 +34,17 @@ public class UserController {
     }*/
 
     @PostMapping("/user/login")
-    public String login(UserLoginDto requestDto, RedirectAttributes redirectAttributes){
+    public String login(UserLoginDto requestDto, HttpServletResponse response){
         log.info("user 컨트롤러 : " + requestDto.toString());
 
         UserDto target = userService.login(requestDto);
 
         //redirectAttributes.addFlashAttribute("userNickname", target.getNickname());
-        redirectAttributes.addAttribute("userNickname", target.getNickname());
+        //redirectAttributes.addAttribute("userNickname", target.getNickname());
+
+        Cookie userCookie = new Cookie("loginUser", target.getNickname());
+        userCookie.setPath("/");
+        response.addCookie(userCookie);
 
         return "redirect:/articles";
     }

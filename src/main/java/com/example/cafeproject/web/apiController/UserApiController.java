@@ -2,6 +2,7 @@ package com.example.cafeproject.web.apiController;
 
 
 import com.example.cafeproject.web.dto.user.UserDto;
+import com.example.cafeproject.web.dto.user.UserLoginDto;
 import com.example.cafeproject.web.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,12 @@ public class UserApiController {
     public UserApiController(UserService userService) {
         this.userService = userService;
     }
+
+/*    @PostMapping("/api/user/login")
+    public ResponseEntity<UserLoginDto> login(){
+
+    }*/
+
 
     @PostMapping("/api/user/signup")
     public ResponseEntity<UserDto> signUpUser(@RequestBody UserDto requestDto){

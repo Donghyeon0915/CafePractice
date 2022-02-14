@@ -26,33 +26,25 @@ public class ArticleController {
     }
 
     @GetMapping("/articles")
-    public String articles(@RequestParam(value = "userNickname", required = false) String nickname, Model model){
+    public String articles(@CookieValue(name = "loginUser", required = false) String nickname, Model model){
         //@RequestParam @Nullable로도 Null을 받을 수 있다.
         //nickname이 null이 아니라면
-        if(!"".equals(nickname)) {
-            log.info("닉네임 들어옴 {}", nickname);
-            model.addAttribute("userNickname", nickname);
-        }
+        if(!"".equals(nickname)) model.addAttribute("userNickname", nickname);
+
         List<ArticleDto> articles = articleService.getArticleList();
         model.addAttribute("articles", articles);
 
         return "/articles/articleIndex";
     }
-    @PostMapping("/articles/view")
-    public String viewArticle(@RequestBody ViewDto dto, RedirectAttributes redirectAttributes){
-        redirectAttributes.addAttribute("userNickname", dto.getUserNickname());
-        log.info(dto.getUserNickname() + "요청됨");
-
-        return "redirect:/articles/" + dto.getArticleId();
-    }
 
     @GetMapping("/articles/{id}")
     public String viewArticle(@PathVariable Long id,
-                              @RequestParam(value = "userNickname") String nickname, Model model){
+                              @CookieValue(name = "loginUser") String nickname, Model model){
         log.info("id = " + id);
         ArticleDto article = articleService.getArticle(id);
 
-        model.addAttribute("article", article);
+        log.info(article.toString());
+        model.addAttribute("articleDto", article);
         model.addAttribute("userNickname", nickname);
 
         return "/articles/articleView";
