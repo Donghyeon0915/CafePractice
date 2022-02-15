@@ -30,7 +30,6 @@ function createArticle(){
 }
 
 function viewArticle(event){
-
     const target = event.currentTarget;
     const articleId = target.querySelector("#article_id").value;
 

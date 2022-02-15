@@ -77,10 +77,7 @@
 
     articles.forEach(article => {
         article.addEventListener("click", (event) =>{
-            const target = event.currentTarget;
-            const articleId = target.querySelector("#article_id").value;
-
-            window.location.href = "/articles/" + articleId;
+            viewArticle(event);
         })
     });
 </script>
