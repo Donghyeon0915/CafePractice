@@ -1,17 +1,33 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 body {
-	background: #f9f9f9;
+	--body-color: #E4E9F7;
+	--card-background-color: #fff;
+	--card-footer-color: #fafafa;
+	background: var(--body-color);
 	font-family: "Roboto", sans-serif;
 }
 
+body.dark{
+	--body-color: #18191a;
+	--card-background-color: #fff; /*rgba(255, 255, 255, 0.3);*/
+	--card-footer-color: #fafafa; /*rgba(239, 239, 239, 0.79);*/
+	background: var(--body-color);
+	font-family: "Roboto", sans-serif;
+}
 .main-content {
 	padding-top: 100px;
 	padding-bottom: 100px;
 }
 
+
+.job-card-container{
+	width: 60%;
+	margin: 4rem auto;
+}
+
 .job-card {
-	background: #fff;
-	margin-bottom: 25px;
+	background: var(--card-background-color);
+	/*margin-bottom: 25px;*/
 	border-radius: 5px;
 	overflow: hidden;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -44,7 +60,7 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	padding: 20px 25px;
-	background: #fafafa;
+	background: var(--card-footer-color);
 }
 
 .job-label {

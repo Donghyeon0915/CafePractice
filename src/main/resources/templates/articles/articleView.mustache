@@ -6,20 +6,20 @@
 <body>
 
 {{>layout/navbar}}
-	<section class="main-content">
+	<section class="home"> <!-- main-content -->
 		<div class="view__container">
-			<h1 class="text-center text-uppercase">Job Card</h1>
+			<h1 class="text-center text-uppercase">Cafe</h1>
 			<br>
 			<br>
 
 			<div class="row">
-				<div class="col-sm-6 offset-sm-3">
+				<div class="job-card-container">  <!-- col-sm-6 offset-sm-3 -->
                     {{#articleDto}}
 					<div class="job-card">
 						<div class="job-card__content">
 							<div class="job-card__content-top">
 								<div class="job-card_img">
-									<img src="/img/slack.svg" alt="Company Logo">
+									<img src="/image/user.png" alt="Company Logo">
 								</div>
 								<div class="job-card_info">
 									<a href="" class="float-right">

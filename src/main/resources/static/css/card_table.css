@@ -3,15 +3,7 @@
 
 /*=====-------------------------- VARIABLES CSS --------------------------=====*/
 :root {
-    /*=====-------------------------- Colors --------------------------=====*/
-    --first-color: #272A3A;
-    --first-color-light: #8A8EAA;
-    --first-color-lighten: #F8F8FC;
 
-    /*=====-------------------------- Font and typography --------------------------=====*/
-    --body-font: 'Ubuntu', sans-serif;
-    --normal-font-size: 1rem;
-    --smaller-font-size: .813rem;
 }
 
 /*=====-------------------------- BASE --------------------------=====*/
@@ -20,6 +12,34 @@
 }
 
 body{
+    /*=====-------------------------- Colors --------------------------=====*/
+    --first-color: #272A3A;
+    --first-color-light: #8A8EAA;
+    --first-color-lighten: #F8F8FC;
+    --shadow-color: #b4b4b4;
+    --shadow-color-sub: #fff;
+    /*=====-------------------------- Font and typography --------------------------=====*/
+    --body-font: 'Ubuntu', sans-serif;
+    --normal-font-size: 1rem;
+    --smaller-font-size: .813rem;
+
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+}
+
+body.dark{
+    /*=====-------------------------- Colors --------------------------=====*/
+    --first-color: #000000;
+    --first-color-light: #e5e5e5;
+    --first-color-lighten: rgba(255, 255, 255, 0.3);
+    --shadow-color: rgba(0, 0, 0, 0);
+    --shadow-color-sub: rgba(255, 255, 255, 0);
+    /*=====-------------------------- Font and typography --------------------------=====*/
+    --body-font: 'Ubuntu', sans-serif;
+    --normal-font-size: 1rem;
+    --smaller-font-size: .813rem;
+
     margin: 0;
     padding: 0;
     font-family: var(--body-font);
@@ -78,8 +98,8 @@ img{
     margin: 0 auto;
     margin-bottom: 2rem;
     background: var(--first-color-lighten);
-    box-shadow: 4px 4px 10px #b4b4b4,
-    -2px -2px 16px #fff;
+    box-shadow: 4px 4px 10px var(--shadow-color),
+    -2px -2px 16px var(--shadow-color-sub);
     border-radius: 1.5rem;
 }
 
