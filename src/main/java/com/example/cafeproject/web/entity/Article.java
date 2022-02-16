@@ -45,7 +45,9 @@ public class Article {
     }
 
     public void patch(ArticleFormDto dto){
+        // 제목은 비어있으면 안됨
         if(!"".equals(dto.getTitle())) this.title = dto.getTitle();
-        if(!"".equals(dto.getContent())) this.content = dto.getContent();
+        // 내용은 비어있어도 허용
+        this.content = dto.getContent();
     }
 }

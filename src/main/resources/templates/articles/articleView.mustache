@@ -4,19 +4,21 @@
 <link rel="stylesheet" href="/css/comment/comment_card_table.css">
 </head>
 
-<body>
+<body onload="availableCheck()">
 
 {{>layout/navbar}}
+    <input type="hidden" id = "hidden_user_nickname" value="{{userNickname}}">
+
 	<section class="home"> <!-- main-content -->
 		<div class="view__container">
 			<h1 class="text-center text-uppercase">Cafe</h1>
 			<br>
 			<br>
-            <input type="hidden" id = "hidden_user_nickname" value="{{userNickname}}">
 			<div class="row">
 				<div class="job-card-container">  <!-- col-sm-6 offset-sm-3 -->
                     {{#articleDto}}
                         <input type="hidden" id = "hidden_article_id" value="{{id}}">
+                        <input type="hidden" id = "hidden_article_author" value="{{author}}">
 					<div class="job-card">
 						<div class="job-card__content">
 							<div class="job-card__content-top">
@@ -34,11 +36,12 @@
 								</div>
                                 <div>
                                     <button type="button"
+                                            id="article_edit_btn"
                                             class="btn btn-outline-primary waves-effect"
                                             data-bs-toggle="modal"
                                             data-bs-target="#article-update-modal"
                                     >수정</button>
-                                    <button class="btn btn-outline-danger" onclick="deleteArticle()">삭제</button>
+                                    <button class="btn btn-outline-danger" id="article_delete_btn" onclick="deleteArticle()">삭제</button>
                                 </div>
 							</div>
 							<div class="job-card_content-mid">
@@ -55,8 +58,8 @@
 						</div>
 						<div class="job-card__footer">
 							<!-- <p class="mb-1 mt-1 text-muted">Posted: 2 days ago</p> -->
-                            <input type="text" placeholder="댓글 입력">
-                            <button class="btn btn-primary">등록</button>
+                            <input type="text" id = "input_comment_content" placeholder="댓글 입력">
+                            <button class="btn btn-primary" onclick="createdComment()">등록</button>
 						</div>
 					</div>
                     {{/articleDto}}
@@ -68,17 +71,17 @@
 
         <div class="comment-drop">
             <div class="comment-drop__container" id='drop-item'>
-
+                {{#commentDtos}}
                     <div class="comment-drop__card">
                         <div class="drop__data">
                             <img src="/image/user.png" alt="" class="drop__img">
                             <div>
-                                <h1 class="drop__name">작성자</h1>
+                                <h1 class="drop__name">{{nickname}}</h1>
                                 <span class="drop__proffession">Web Developer</span>
                             </div>
 
                             <div class="drop__title">
-                                <h1>[댓글 ID] 댓글 내용</h1>
+                                <h1 id = "comment_content">{{content}}</h1>
                             </div>
                         </div>
                         <input type="hidden" id = "article_id" value = "id">
@@ -88,28 +91,7 @@
                             <a href="" class="drop__soc"><i class='bx bxl-twitter' ></i></a>
                         </div>
                     </div>
-
-                <div class="comment-drop__card">
-                    <div class="drop__data">
-                        <img src="/image/user.png" alt="" class="drop__img">
-                        <div>
-                            <h1 class="drop__name">작성자</h1>
-                            <span class="drop__proffession">Web Developer</span>
-                        </div>
-
-                        <div class="drop__title">
-                            <h1>[댓글 ID] 댓글 내용</h1>
-                        </div>
-                    </div>
-                    <input type="hidden" id = "article_id" value = "id">
-                    <div>
-                        <a href="" class="drop__soc"><i class='bx bxl-instagram'></i></a>
-                        <a href="" class="drop__soc"><i class='bx bxl-facebook'></i></a>
-                        <a href="" class="drop__soc"><i class='bx bxl-twitter' ></i></a>
-                    </div>
-                </div>
-
-
+                {{/commentDtos}}
             </div>
         </div>
 
@@ -146,5 +128,7 @@
         </div>
 	</section>
 
+<script src="/js/view/articleView.js"></script>
+<script src="/js/comment/comment.js"></script>
 <script src="/js/article/article.js"></script>
 {{>layout/footer}}
