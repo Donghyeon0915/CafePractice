@@ -44,7 +44,7 @@ public class Article {
                 .build();
     }
 
-    public void fetch(ArticleFormDto dto){
+    public void patch(ArticleFormDto dto){
         if(!"".equals(dto.getTitle())) this.title = dto.getTitle();
         if(!"".equals(dto.getContent())) this.content = dto.getContent();
     }

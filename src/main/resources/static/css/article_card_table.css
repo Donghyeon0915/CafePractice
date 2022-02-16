@@ -1,0 +1,151 @@
+/*=====-------------------------- GOOGLE FONTS --------------------------=====*/
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
+
+/*=====-------------------------- VARIABLES CSS --------------------------=====*/
+:root {
+
+}
+
+/*=====-------------------------- BASE --------------------------=====*/
+*,::before,::after{
+    box-sizing: border-box;
+}
+
+body{
+    /*=====-------------------------- Colors --------------------------=====*/
+    --first-color: #272A3A;
+    --first-color-light: #8A8EAA;
+    --first-color-lighten: #F8F8FC;
+    --shadow-color: #b4b4b4;
+    --shadow-color-sub: #fff;
+    /*=====-------------------------- Font and typography --------------------------=====*/
+    --body-font: 'Ubuntu', sans-serif;
+    --normal-font-size: 1rem;
+    --smaller-font-size: .813rem;
+
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+}
+
+body.dark{
+    /*=====-------------------------- Colors --------------------------=====*/
+    --first-color: #000000;
+    --first-color-light: #e5e5e5;
+    --first-color-lighten: rgba(255, 255, 255, 0.3);
+    --shadow-color: rgba(0, 0, 0, 0);
+    --shadow-color-sub: rgba(255, 255, 255, 0);
+    /*=====-------------------------- Font and typography --------------------------=====*/
+    --body-font: 'Ubuntu', sans-serif;
+    --normal-font-size: 1rem;
+    --smaller-font-size: .813rem;
+
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+}
+
+h1{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    outline: none;
+}
+
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+.home{
+    height: 95%;
+}
+/*=====-------------------------- DRAG and DROP --------------------------=====*/
+.drop, .drop__container{
+    height: 90%;
+    display: block;
+}
+
+.drop{
+    /*height: 100vh;*/
+
+    align-items: center;
+    justify-content: center;
+    /*margin-top: 1rem;*/
+}
+
+.drop__container{
+    row-gap: 3rem;
+    /*padding: 2rem;*/
+    justify-content: center;
+    overflow: auto;
+    /* box-shadow: 4px 4px 16px #E1E1E1; */
+}
+
+.drop__card, .drop__data{
+    display: flex;
+    align-items: center;
+}
+
+.drop__card{
+    width: 70%;
+    justify-content: space-between;
+    padding: 2rem 1.25rem 2rem .75rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    background: var(--first-color-lighten);
+    box-shadow: 4px 4px 10px var(--shadow-color),
+    -2px -2px 16px var(--shadow-color-sub);
+    border-radius: 0.5rem;
+}
+
+.drop__card:hover{
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+.drop__img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.drop__name{
+    font-size: var(--normal-font-size);
+    color: var(--first-color);
+}
+
+.drop__proffession, div > h1{
+    font-size: var(--smaller-font-size);
+    color: var(--first-color-light)
+}
+
+.drop__social{
+    margin: 0 .375rem;
+    color: var(--first-color-light);
+    transition: .4s;
+}
+
+.drop__social:hover{
+    color: var(--first-color);
+}
+
+.drop__title{
+    margin-left: 2rem;
+}
+/*-------------------------- Class name for the chosen item --------------------------*/
+
+.sortable-chosen{
+    box-shadow: 8px 8px 32px #E1E1E1;
+}
+
+/*-------------------------- Class name for the dragging item --------------------------*/
+
+.sortable-drag{
+    opacity: 0;
+}

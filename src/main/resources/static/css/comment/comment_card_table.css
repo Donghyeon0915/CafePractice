@@ -65,8 +65,8 @@ img{
     height: 95%;
 }
 /*=====-------------------------- DRAG and DROP --------------------------=====*/
-.drop, .drop__container{
-    height: 90%;
+.comment-drop, .comment-drop__container{
+    /*height: 90%;*/
     display: block;
 }
 
@@ -78,21 +78,23 @@ img{
     margin-top: 2rem;
 }
 
-.drop__container{
+.comment-drop__container{
     row-gap: 3rem;
     padding: 2rem;
     justify-content: center;
+
+    resize: vertical;
     overflow: auto;
     /* box-shadow: 4px 4px 16px #E1E1E1; */
 }
 
-.drop__card, .drop__data{
+.comment-drop__card, .drop__data{
     display: flex;
     align-items: center;
 }
 
-.drop__card{
-    width: 70%;
+.comment-drop__card{
+    width: 61.8%;
     justify-content: space-between;
     padding: 2rem 1.25rem 2rem .75rem;
     margin: 0 auto;
@@ -100,10 +102,10 @@ img{
     background: var(--first-color-lighten);
     box-shadow: 4px 4px 10px var(--shadow-color),
     -2px -2px 16px var(--shadow-color-sub);
-    border-radius: 1.5rem;
+    border-radius: 0.5rem;
 }
 
-.drop__card:hover{
+.comment-drop__card:hover{
     cursor: pointer;
     transform: scale(1.03);
 }

@@ -45,14 +45,12 @@ public class ArticleService {
     public ArticleDto update(Long articleId, ArticleFormDto requestDto){
         Article article = articleRepository.findById(articleId)
                 .orElseThrow(() -> new IllegalArgumentException("해당 ID의 게시글이 존재하지 않습니다."));
-        
-        article.fetch(requestDto);
 
-        Article updated = articleRepository.save(article);
+        //Article updated = articleRepository.save(article);
+        //if(updated == null) throw new IllegalArgumentException("게시글 업데이트 오류");
+        article.patch(requestDto);  //JPA 영속성 컨텍스트로 인해 Repository로 save하지 않아도 update 쿼리가 전송됨
 
-        if(updated == null) throw new IllegalArgumentException("게시글 업데이트 오류");
-
-        return ArticleDto.createArticleDto(updated);
+        return ArticleDto.createArticleDto(article);
     }
 
     @Transactional
