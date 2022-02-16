@@ -63,6 +63,17 @@ body.dark{
 	background: var(--card-footer-color);
 }
 
+.job-card__footer input{
+	width: 80%;
+	height: 100%;
+	outline: none;
+	font-size: 16px;
+	border: none;
+	overflow: auto;
+	background: var(--card-footer-color);
+}
+
+
 .job-label {
 	display: inline-block;
 	padding: 6px 12px;
@@ -71,3 +82,4 @@ body.dark{
 	margin-right: 2px;
 	margin-top: 15px;
 }
+

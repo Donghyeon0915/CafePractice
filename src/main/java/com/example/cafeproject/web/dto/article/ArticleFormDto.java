@@ -10,7 +10,7 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class ArticleCreateDto {
+public class ArticleFormDto {
     private String author;
     private String title;
     private String content;

@@ -2,7 +2,7 @@
 package com.example.cafeproject.web.entity;
 
 
-import com.example.cafeproject.web.dto.article.ArticleCreateDto;
+import com.example.cafeproject.web.dto.article.ArticleFormDto;
 import lombok.*;
 
 import javax.persistence.*;
@@ -34,7 +34,7 @@ public class Article {
     @Column
     private Long likes;
 
-    public static Article createArticle(ArticleCreateDto dto){
+    public static Article createArticle(ArticleFormDto dto){
         return Article.builder()
                 .author(dto.getAuthor())
                 .title(dto.getTitle())
@@ -42,5 +42,10 @@ public class Article {
                 .view(0L)
                 .likes(0L)
                 .build();
+    }
+
+    public void fetch(ArticleFormDto dto){
+        if(!"".equals(dto.getTitle())) this.title = dto.getTitle();
+        if(!"".equals(dto.getContent())) this.content = dto.getContent();
     }
 }

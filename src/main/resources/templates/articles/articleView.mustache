@@ -11,10 +11,11 @@
 			<h1 class="text-center text-uppercase">Cafe</h1>
 			<br>
 			<br>
-
+            <input type="hidden" id = "hidden_user_nickname" value="{{userNickname}}">
 			<div class="row">
 				<div class="job-card-container">  <!-- col-sm-6 offset-sm-3 -->
                     {{#articleDto}}
+                        <input type="hidden" id = "hidden_article_id" value="{{id}}">
 					<div class="job-card">
 						<div class="job-card__content">
 							<div class="job-card__content-top">
@@ -30,6 +31,13 @@
 									</a>
 									<p class="text-muted mb-0">Web developer</p>
 								</div>
+                                <div>
+                                    <button class="btn btn-outline-primary"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#article-update-modal"
+                                    >수정</button>
+                                    <button class="btn btn-outline-danger" onclick="deleteArticle()">삭제</button>
+                                </div>
 							</div>
 							<div class="job-card_content-mid">
 								<h4>{{title}}</h4>
@@ -44,13 +52,45 @@
 							</div>
 						</div>
 						<div class="job-card__footer">
-							<p class="mb-1 mt-1 text-muted">Posted: 2 days ago</p>
-							<button class="btn btn-primary">Apply</button>
+							<!-- <p class="mb-1 mt-1 text-muted">Posted: 2 days ago</p> -->
+                            <input type="text" placeholder="댓글 입력">
+                            <button class="btn btn-primary">등록</button>
 						</div>
 					</div>
                     {{/articleDto}}
 				</div>
 			</div>
 		</div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="article-update-modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class = "modal-content container" id="update_article_modal">
+                    <div class="modal-body">
+                        <div class = "login_form">
+                            <div class="title">Update Article</div>
+                            <div class="input-box underline">
+                                <input type="text" id = "update_article_author" value="{{articleDto.author}}" readonly>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="input-box underline">
+                                <input type="text" id = "update_article_title" value = "{{articleDto.title}}"placeholder="Enter Title" required>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="input-text-box">
+                                <textarea type="text" id = "update_article_content" placeholder="Enter Content" required>{{articleDto.content}}</textarea>
+                                <div class="underline"></div>
+                            </div>
+
+                            <div class="input-box button" style="float: left">
+                                <input type="submit" name="" value="Registration" id = "article_resist_btn" onclick="updateArticle()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 	</section>
+
+<script src="/js/article/article.js"></script>
 {{>layout/footer}}
