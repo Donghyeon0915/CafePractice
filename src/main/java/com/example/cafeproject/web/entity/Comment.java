@@ -1,6 +1,7 @@
 package com.example.cafeproject.web.entity;
 
 
+import com.example.cafeproject.web.dto.CommentDto;
 import lombok.*;
 
 import javax.persistence.*;
@@ -28,4 +29,12 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "article_id")
     private Article article;
+
+    public static Comment createComment(CommentDto dto, Article article){
+        return Comment.builder()
+                .nickname(dto.getNickname())
+                .content(dto.getContent())
+                .article(article)
+                .build();
+    }
 }
