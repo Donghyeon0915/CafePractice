@@ -3,7 +3,9 @@ function availableCheck(){
     const author = document.querySelector('#hidden_article_author').value;
 
     if(userNickname != author){
-        document.querySelector('#article_edit_btn').classList.add("hidden");
-        document.querySelector('#article_delete_btn').classList.add("hidden");
+        document.querySelector('#article_edit_btn').remove();
+        //classList.add("hidden");
+        document.querySelector('#article_delete_btn').remove();
+        //.classList.add("hidden");
     }
 }

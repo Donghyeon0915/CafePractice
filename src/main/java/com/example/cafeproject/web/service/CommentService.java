@@ -39,6 +39,17 @@ public class CommentService {
         return CommentDto.createCommentDto(created);
     }
 
+    @Transactional
+    public List<CommentDto> deleteAll(Long articleId){
+        List<CommentDto> commentDtos = commentRepository.findByArticleId(articleId).stream()
+                .map(comment -> CommentDto.createCommentDto(comment))
+                .collect(Collectors.toList());
+        // deleteAllByArticleId로 삭제가 안되는 이유 ?
+        for (CommentDto comment : commentDtos) commentRepository.deleteById(comment.getId());
+
+        return commentDtos;
+    }
+
     public List<CommentDto> getCommentList(Long articleId){
         return commentRepository.findByArticleId(articleId)
                 .stream()

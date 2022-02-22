@@ -1,9 +1,12 @@
 package com.example.cafeproject.web.service;
 
+import com.example.cafeproject.web.dto.CommentDto;
 import com.example.cafeproject.web.dto.article.ArticleFormDto;
 import com.example.cafeproject.web.dto.article.ArticleDto;
 import com.example.cafeproject.web.entity.Article;
+import com.example.cafeproject.web.entity.Comment;
 import com.example.cafeproject.web.repository.ArticleRepository;
+import com.example.cafeproject.web.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +16,14 @@ import java.util.stream.Collectors;
 
 @Service
 public class ArticleService {
-    @Autowired
-    private ArticleRepository articleRepository;
+    private final ArticleRepository articleRepository;
+
+    private final CommentRepository commentRepository;
+
+    public ArticleService(ArticleRepository articleRepository, CommentRepository commentRepository) {
+        this.articleRepository = articleRepository;
+        this.commentRepository = commentRepository;
+    }
 
     public List<ArticleDto> getArticleList(){
         return articleRepository.findAll()
@@ -57,7 +66,7 @@ public class ArticleService {
     public ArticleDto delete(Long articleId){
         Article article = articleRepository.findById(articleId)
                 .orElseThrow(() -> new IllegalArgumentException("해당 ID의 게시글이 존재하지 않습니다."));
-
+        
         articleRepository.delete(article);
 
         return ArticleDto.createArticleDto(article);
