@@ -52,7 +52,7 @@ public class ArticleController {
         model.addAttribute("articleDto", article);
         model.addAttribute("commentDtos", commentDtos);
         model.addAttribute("userNickname", nickname);
-        log.info("닉네임 {}", nickname);
+
         return "/articles/articleView";
     }
 

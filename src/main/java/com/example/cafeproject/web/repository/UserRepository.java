@@ -15,7 +15,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query(value = "SELECT * FROM user WHERE nickname = :nickname", nativeQuery = true)
     Optional<User> findByNickname(String nickname);
 
-    @Query(value = "SELECT EXISTS (SELECT * FROM user WHERE user_id = :userId AND nickname = :nickname) as success", nativeQuery = true)
+    @Query(value = "SELECT EXISTS (SELECT * FROM user WHERE user_id = :userId OR nickname = :nickname) as success", nativeQuery = true)
     int userOverlapCheck(String userId, String nickname);
 
 }

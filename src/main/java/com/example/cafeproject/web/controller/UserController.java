@@ -26,9 +26,6 @@ public class UserController {
 
         UserDto target = userService.login(requestDto);
 
-        //redirectAttributes.addFlashAttribute("userNickname", target.getNickname());
-        //redirectAttributes.addAttribute("userNickname", target.getNickname());
-
         Cookie userCookie = new Cookie("loginUser", target.getNickname());
         userCookie.setPath("/");
         response.addCookie(userCookie);
