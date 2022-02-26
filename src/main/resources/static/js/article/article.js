@@ -69,13 +69,7 @@ function updateArticle(){
 }
 
 function deleteArticle(){
-    const loginUser = document.querySelector('#hidden_user_nickname').value;
-    const author = document.querySelector('#update_article_author').value;
-
-    if(loginUser != author){
-        alert("게시글 삭제는 작성자만 가능합니다.");
-        return;
-    }
+    if(!confirm("게시글을 삭제 하시겠습니까 ?")) return;
 
     const articleId = document.querySelector('#hidden_article_id').value;
     const url = `/api/articles/${articleId}/delete`;
@@ -84,8 +78,8 @@ function deleteArticle(){
         method: "DELETE"
     }).then(response =>{
         if(response.ok) {
-            alert("삭제가 완료 되었습니다.");
-            window.location.href = "/articles";
+           alert("삭제가 완료 되었습니다.");
+           window.location.href = "/articles";
         }
         else alert("게시글 삭제 오류");
     })

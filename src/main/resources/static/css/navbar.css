@@ -14,12 +14,13 @@ nav{
 
 :root {
     /* ===== Colors ===== */
-    --body-color: #E4E9F7;
+/*    --body-color: #E4E9F7;
     --sidebar-color: #FFF;
     --primary-color: #695CFE;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;
+    --title-text-color: #ccc;*/
 
     /* ====== Transition ====== */
     --tran-03: all 0.2s ease;
@@ -30,12 +31,20 @@ nav{
 
 body{
     height: 100%;
-    background-color: var(--body-color);
+    background-image: url("../image/background.jpg");
+    background-size: cover;
+    /*background-color: var(--body-color);*/
     transition: var(--tran-05);
 }
-::selection{
-    background-color: var(--primary-color);
-    color: #fff;
+body::before{
+    content: "";
+    opacity: 0.2;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #000;
 }
 
 body.dark{
@@ -47,17 +56,24 @@ body.dark{
     --text-color: #ccc;
 }
 
+::selection{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
 /* ===== Sidebar ===== */
 .sidebar{
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
-    height: 100%;
+
+    height: 75%;
     width: 250px;
     padding: 10px 14px;
     background: var(--sidebar-color);
     transition: var(--tran-05);
     z-index: 100;
+    border-radius: 0rem 1rem 0rem 0rem;
 }
 .sidebar.close{
     width: 88px;
@@ -293,13 +309,14 @@ body.dark .switch::before{
     left: 250px;
     height: 100vh;
     width: calc(100% - 250px);
-    background-color: var(--body-color);
+    /*background-image: url("../image/background.jpg");*/
+    /*background-color: var(--body-color);*/
     transition: var(--tran-05);
 }
 .home .text{
     font-size: 30px;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--title-text-color);
     padding: 12px 60px;
 }
 

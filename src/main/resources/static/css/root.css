@@ -1,0 +1,28 @@
+
+
+:root{
+    /* ===== Colors ===== (navbar) */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+
+    --primary-color: #695CFE;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+
+    --text-color: #000000;
+    --title-text-color: rgba(189, 189, 189, 0.6);
+
+    /*=====-------------------------- Colors --------------------------=====* (card_table)*/
+    --first-color: #272A3A;
+    --first-color-light: #8A8EAA; /*#e5e5e5*/
+    --first-color-lighten: #F8F8FC;
+
+    --shadow-color: #b4b4b4;
+    --shadow-color-sub: #fff;
+
+    /*=====-------------------------- Colors --------------------------=====* (articleViewpage)*/
+    --card-background-color: #fff; /*rgba(210, 210, 210, 0.4);*/
+    --card-footer-color:#fafafa; /*rgba(210, 210, 210, 0.4); /*#fafafa;*/
+
+    --cardtable-background-color: #ffffff; /*rgba(210, 210, 210, 0.4);*/
+}

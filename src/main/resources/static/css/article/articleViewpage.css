@@ -1,17 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 body {
-	--body-color: #E4E9F7;
-	--card-background-color: #fff;
-	--card-footer-color: #fafafa;
-	background: var(--body-color);
 	font-family: "Roboto", sans-serif;
 }
 
 body.dark{
-	--body-color: #18191a;
-	--card-background-color: #fff; /*rgba(255, 255, 255, 0.3);*/
-	--card-footer-color: #fafafa; /*rgba(239, 239, 239, 0.79);*/
-	background: var(--body-color);
+	--card-background-color: rgba(255, 255, 255, 0.3); /*#fff; /*rgba(255, 255, 255, 0.3);*/
+	--card-footer-color: rgba(239, 239, 239, 0.79); /*#fafafa; /*rgba(239, 239, 239, 0.79);*/
+	--first-color: rgba(255, 255, 255, 0.92);
 	font-family: "Roboto", sans-serif;
 }
 .main-content {
@@ -60,7 +55,7 @@ body.dark{
 	align-items: center;
 	justify-content: space-between;
 	padding: 20px 25px;
-	background: var(--card-footer-color);
+	/*background: var(--card-footer-color);*/
 }
 
 .job-card__footer input{
@@ -70,9 +65,13 @@ body.dark{
 	font-size: 16px;
 	border: none;
 	overflow: auto;
-	background: var(--card-footer-color);
+	background: rgba(255, 255, 255, 0);
+	border-radius: 0.3rem;
 }
 
+.job-card__footer input::placeholder{
+	color: var(--first-color);
+}
 
 .job-label {
 	display: inline-block;

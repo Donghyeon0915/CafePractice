@@ -1,11 +1,6 @@
 /*=====-------------------------- GOOGLE FONTS --------------------------=====*/
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
 
-/*=====-------------------------- VARIABLES CSS --------------------------=====*/
-:root {
-
-}
-
 /*=====-------------------------- BASE --------------------------=====*/
 *,::before,::after{
     box-sizing: border-box;
@@ -13,11 +8,13 @@
 
 body{
     /*=====-------------------------- Colors --------------------------=====*/
-    --first-color: #272A3A;
-    --first-color-light: #8A8EAA;
+/*    --first-color: #272A3A;
+    --first-color-light: #e5e5e5; !*#8A8EAA;*!
     --first-color-lighten: #F8F8FC;
     --shadow-color: #b4b4b4;
     --shadow-color-sub: #fff;
+    --cardtable-background-color: rgba(210, 210, 210, 0.4);*/
+
     /*=====-------------------------- Font and typography --------------------------=====*/
     --body-font: 'Ubuntu', sans-serif;
     --normal-font-size: 1rem;
@@ -32,7 +29,8 @@ body.dark{
     /*=====-------------------------- Colors --------------------------=====*/
     --first-color: #000000;
     --first-color-light: #e5e5e5;
-    --first-color-lighten: rgba(255, 255, 255, 0.3);
+    --cardtable-background-color: rgba(255, 255, 255, 0.3);
+
     --shadow-color: rgba(0, 0, 0, 0);
     --shadow-color-sub: rgba(255, 255, 255, 0);
     /*=====-------------------------- Font and typography --------------------------=====*/
@@ -99,9 +97,9 @@ img{
     padding: 2rem 1.25rem 2rem .75rem;
     margin: 0 auto;
     margin-bottom: 2rem;
-    background: var(--first-color-lighten);
-    box-shadow: 4px 4px 10px var(--shadow-color),
-    -2px -2px 16px var(--shadow-color-sub);
+    background: var(--cardtable-background-color);
+    /*box-shadow: 4px 4px 10px var(--shadow-color),
+    -2px -2px 16px var(--shadow-color-sub);*/
     border-radius: 0.5rem;
 }
 
