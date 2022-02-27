@@ -17,8 +17,6 @@ function login(){
         userPw: userPw.value
     };
 
-    alert(userData.toString());
-
     console.log("id = " + userData.userId + " pw = " + userData.userPw);
 
     const url = "/api/user/login";
