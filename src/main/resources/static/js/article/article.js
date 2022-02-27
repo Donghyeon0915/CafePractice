@@ -30,15 +30,10 @@ function createArticle(){
 }
 
 function updateArticle(){
-    const loginUser = document.querySelector('#hidden_user_nickname').value;
     const author = document.querySelector('#update_article_author').value;
     const title = document.querySelector('#update_article_title').value;
     const content = document.querySelector('#update_article_content').value;
 
-    if(loginUser != author){
-        alert("게시글 수정은 작성자만 가능합니다.");
-        return;
-    }
     if(title == "") {
         alert("제목을 입력하세요.");
         return;

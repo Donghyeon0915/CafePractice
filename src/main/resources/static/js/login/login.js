@@ -2,11 +2,22 @@
 function login(){
     const userId = document.querySelector("#userId");
     const userPw = document.querySelector("#userPassword");
+    if(userId.value == "") {
+        alert("아이디를 입력해주세요");
+        return;
+    }
+
+    if(userPw.value == ""){
+        alert("비밀번호를 입력해주세요");
+        return;
+    }
 
     const userData = {
         userId: userId.value,
         userPw: userPw.value
     };
+
+    alert(userData.toString());
 
     console.log("id = " + userData.userId + " pw = " + userData.userPw);
 

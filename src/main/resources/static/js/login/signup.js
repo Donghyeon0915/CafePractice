@@ -1,7 +1,27 @@
-function signup(){
-    const userNickname = document.querySelector("#sign_up_nickname");
-    const userId = document.querySelector("#sign_up_id");
-    const userPw = document.querySelector("#sign_up_password");
+function changeMode(){
+    const title = document.querySelector('#login_title');
+    const nickname = document.querySelector('#userNickname');
+    const loginBtn = document.querySelector('#login_input');
+    const signUpBtn = document.querySelector('#sign_up_btn');
+    const buttonText = document.querySelector('#custom_btn');
+
+    if(title.innerHTML == "Welcome"){
+        title.innerHTML = "Sign Up";
+        buttonText.innerHTML = "Back To Login";
+        loginBtn.classList.toggle('invisible');
+        signUpBtn.classList.toggle('invisible');
+        nickname.classList.toggle('invisible');
+    }
+    else{
+        window.location.reload();
+    }
+
+}
+
+function signUp(){
+    const userNickname = document.querySelector("#userNickname");
+    const userId = document.querySelector("#userId");
+    const userPw = document.querySelector("#userPassword");
 
     const data = {
         nickname: userNickname.value,

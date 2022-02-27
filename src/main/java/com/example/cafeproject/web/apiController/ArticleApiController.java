@@ -44,7 +44,6 @@ public class ArticleApiController {
     @DeleteMapping("/api/articles/{articleId}/delete")
     public ResponseEntity<ArticleDto> deleteArticle(@PathVariable Long articleId){
         //게시글에 달린 댓글을 모두 삭제
-        log.info("여기로 오는거 아닌가");
         List<CommentDto> commentDtos = commentService.deleteAll(articleId);
 
         ArticleDto deleted = articleService.delete(articleId);

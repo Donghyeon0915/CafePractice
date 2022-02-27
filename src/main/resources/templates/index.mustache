@@ -1,12 +1,62 @@
 {{>layout/header}}
 <link href="/css/login.css" rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="container login_body">
+<!--<div class="circlebg">
+    <div class="circle circle-red"></div>
+    <div class="circle circle-green"></div>
+    <div class="circle circle-blue"></div>
+    <div class="circle circle-yellow"></div>
+</div>-->
 
-    <!-- <form action="/user/login" method="post"> -->
+<div class="login_container">
+    <div id="custom_form">
+        <p id = "login_title">Welcome</p>
+        <input type="email" class="invisible" id="userNickname" placeholder="Nickname"><br>
+        <input type="email" id="userId" placeholder="Email"><br>
+        <input type="password" id="userPassword" placeholder="Password"><br>
+
+        <input type="button" id="login_input" value="Sign in"><br>
+        <input type="button" class="invisible" id="sign_up_btn" value="Sign Up"><br>
+
+        <div id="custom_btn" onclick="changeMode()">Sign Up</div>
+    </div>
+
+    <div class="drops">
+        <div class="drop drop-1"></div>
+        <div class="drop drop-2"></div>
+        <div class="drop drop-3"></div>
+        <div class="drop drop-4"></div>
+        <div class="drop drop-5"></div>
+    </div>
+</div>
+
+<!--<div class="sign_up_container invisible">
+    <div id="custom_form">
+        <p id = "login_title">Welcome</p>
+        <input type="email" id="userNickname" placeholder="Nickname"><br>
+        <input type="email" id="userId" placeholder="Email"><br>
+        <input type="password" id="userPassword" placeholder="Password"><br>
+        <input type="button" id="login_input" value="Sign in"><br>
+
+        <button onclick="changeToSignUp()">Sing Up</button>
+    </div>
+
+    <div class="drops">
+        <div class="drop drop-1"></div>
+        <div class="drop drop-2"></div>
+        <div class="drop drop-3"></div>
+        <div class="drop drop-4"></div>
+        <div class="drop drop-5"></div>
+    </div>
+</div>-->
+
+<!--<div class="container login_body">
+
+    &lt;!&ndash; <form action="/user/login" method="post"> &ndash;&gt;
     <div class = "login_form">
         <div class="title">Login</div>
         <div class="input-box underline">
@@ -22,7 +72,7 @@
             <input type="submit" value="Continue" id = "login_input">
         </div>
     </div>
-    <!-- </form> -->
+    &lt;!&ndash; </form> &ndash;&gt;
 
     <div class="option">
         <a class ="underline"
@@ -41,7 +91,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+&lt;!&ndash; Modal &ndash;&gt;
 <div class="modal fade" id="sign_up_modal" tabindex="-1">
     <div class="modal-dialog">
         <div class = "modal-content container" id = "sign_up_modal">
@@ -69,12 +119,15 @@
         </div>
     </div>
 </div>
+-->
 
 <script>
     {
         const loginBtn = document.querySelector("#login_input");
+        const signUpBtn = document.querySelector("#sign_up_btn");
 
         loginBtn.addEventListener("click", () => login());
+        signUpBtn.addEventListener("click", () => signUp());
     }
     {
         const passwordInput = document.querySelector('body');

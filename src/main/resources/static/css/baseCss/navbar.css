@@ -29,23 +29,23 @@ nav{
     --tran-05: all 0.3s ease;
 }
 
-body{
+/*body{
     height: 100%;
-    background-image: url("../image/background.jpg");
+    background-image: url("../../image/background.jpg");
     background-size: cover;
-    /*background-color: var(--body-color);*/
+    !*background-color: var(--body-color);*!
     transition: var(--tran-05);
 }
 body::before{
     content: "";
-    opacity: 0.2;
+    opacity: 0;
     position: absolute;
     top: 0px;
     left: 0px;
     right: 0px;
     bottom: 0px;
     background-color: #000;
-}
+}*/
 
 body.dark{
     --body-color: #18191a;

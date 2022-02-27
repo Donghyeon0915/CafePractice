@@ -1,0 +1,17 @@
+body{
+    height: 100%;
+    background-image: url("../../image/background.jpg");
+    background-size: cover;
+    /*background-color: var(--body-color);*/
+    transition: var(--tran-05);
+}
+body::before{
+    content: "";
+    opacity: 0.2;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #000;
+}
