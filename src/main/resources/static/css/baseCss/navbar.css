@@ -13,15 +13,6 @@ nav{
 }
 
 :root {
-    /* ===== Colors ===== */
-/*    --body-color: #E4E9F7;
-    --sidebar-color: #FFF;
-    --primary-color: #695CFE;
-    --primary-color-light: #F6F5FF;
-    --toggle-color: #DDD;
-    --text-color: #707070;
-    --title-text-color: #ccc;*/
-
     /* ====== Transition ====== */
     --tran-03: all 0.2s ease;
     --tran-03: all 0.3s ease;
@@ -29,23 +20,6 @@ nav{
     --tran-05: all 0.3s ease;
 }
 
-/*body{
-    height: 100%;
-    background-image: url("../../image/background.jpg");
-    background-size: cover;
-    !*background-color: var(--body-color);*!
-    transition: var(--tran-05);
-}
-body::before{
-    content: "";
-    opacity: 0;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background-color: #000;
-}*/
 
 body.dark{
     --body-color: #18191a;
@@ -67,10 +41,12 @@ body.dark{
     bottom: 0;
     left: 0;
 
-    height: 75%;
+    height: 85%;
     width: 250px;
     padding: 10px 14px;
-    background: var(--sidebar-color);
+    background: rgba(255, 255, 255, 0.05); /*var(--sidebar-color);*/
+    backdrop-filter: blur(3px);
+
     transition: var(--tran-05);
     z-index: 100;
     border-radius: 0rem 1rem 0rem 0rem;
@@ -198,7 +174,7 @@ body.dark .sidebar header .toggle{
     width: 100%;
     outline: none;
     border: none;
-    background-color: var(--primary-color-light);
+    background-color: rgba(255,255,255, 0);
     color: var(--text-color);
     border-radius: 6px;
     font-size: 17px;

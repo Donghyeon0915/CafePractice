@@ -5,13 +5,13 @@ body{
     /*background-color: var(--body-color);*/
     transition: var(--tran-05);
 }
-body::before{
-    content: "";
-    opacity: 0.2;
+
+body::after{
+    content:'';
+    display: block;
     position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background-color: #000;
+    width: 100%;
+    height:100%;
+    backdrop-filter: blur(10px);
+    z-index: -2;
 }

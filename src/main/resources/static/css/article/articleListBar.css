@@ -1,0 +1,32 @@
+.articleBar {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.articleBar .pagination {
+    position: relative;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+    border-radius: 2px;
+}
+.articleBar .pagination li {
+    list-style-type: none;
+    display: inline-block;
+}
+.articleBar .pagination li a {
+    position: relative;
+    padding: 20px 25px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+.articleBar .pagination li a:hover,
+.articleBar .pagination li.active a {
+    background: rgba(255, 255, 255, 0.2);
+}
