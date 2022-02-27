@@ -11,6 +11,7 @@ body {
     border-radius: 50%;
     filter: drop-shadow(0 0 10px white);
 }
+
 .snow:nth-child(1) {
     opacity: 0.8213;
     transform: translate(19.838vw, -10px) scale(0.8398);
