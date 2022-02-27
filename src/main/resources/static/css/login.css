@@ -18,9 +18,19 @@ body{
 
 
 body {
-    background: linear-gradient(45deg, #FC466B, #3F5EFB);
+    /*background: linear-gradient(45deg, #4f4f4f, #3984d9); !*linear-gradient(45deg, #FC466B, #3F5EFB);*!*/
+    background-image: url("../image/background.jpg");
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
+}
+body::after{
+    content:'';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height:100%;
+    backdrop-filter: blur(10px);
+    z-index: -2;
 }
 
 .login_container, .sign_up_container {
@@ -43,7 +53,8 @@ body {
     transition: all 0.2s ease-in-out;
 }
 #custom_form:hover {
-    margin: 4px;
+    margin: 8px;
+
 }
 
 #custom_form p {

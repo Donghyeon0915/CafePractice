@@ -8,6 +8,7 @@ function changeMode(){
     if(title.innerHTML == "Welcome"){
         title.innerHTML = "Sign Up";
         buttonText.innerHTML = "Back To Login";
+
         loginBtn.classList.toggle('invisible');
         signUpBtn.classList.toggle('invisible');
         nickname.classList.toggle('invisible');
