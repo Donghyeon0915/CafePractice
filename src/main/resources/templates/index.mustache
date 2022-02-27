@@ -3,16 +3,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-<body>
 
-<!--<div class="circlebg">
-    <div class="circle circle-red"></div>
-    <div class="circle circle-green"></div>
-    <div class="circle circle-blue"></div>
-    <div class="circle circle-yellow"></div>
-</div>-->
+<body>
+{{>layout/background_snow}}
 
 <div class="login_container">
+
     <div id="custom_form">
         <p id = "login_title">Welcome</p>
         <input type="email" class="invisible" id="userNickname" placeholder="Nickname"><br>
@@ -33,93 +29,6 @@
         <div class="drop drop-5"></div>
     </div>
 </div>
-
-<!--<div class="sign_up_container invisible">
-    <div id="custom_form">
-        <p id = "login_title">Welcome</p>
-        <input type="email" id="userNickname" placeholder="Nickname"><br>
-        <input type="email" id="userId" placeholder="Email"><br>
-        <input type="password" id="userPassword" placeholder="Password"><br>
-        <input type="button" id="login_input" value="Sign in"><br>
-
-        <button onclick="changeToSignUp()">Sing Up</button>
-    </div>
-
-    <div class="drops">
-        <div class="drop drop-1"></div>
-        <div class="drop drop-2"></div>
-        <div class="drop drop-3"></div>
-        <div class="drop drop-4"></div>
-        <div class="drop drop-5"></div>
-    </div>
-</div>-->
-
-<!--<div class="container login_body">
-
-    &lt;!&ndash; <form action="/user/login" method="post"> &ndash;&gt;
-    <div class = "login_form">
-        <div class="title">Login</div>
-        <div class="input-box underline">
-            <input type="text" id = "userId" name="userId" placeholder="Enter Your Id" required autofocus>
-            <div class="underline"></div>
-        </div>
-        <div class="input-box">
-            <input type="password" id = "userPassword" name="userPw" placeholder="Enter Your Password" required>
-            <div class="underline"></div>
-        </div>
-
-        <div class="input-box button" style="float: left">
-            <input type="submit" value="Continue" id = "login_input">
-        </div>
-    </div>
-    &lt;!&ndash; </form> &ndash;&gt;
-
-    <div class="option">
-        <a class ="underline"
-            id = "sign_up_tag"
-           data-bs-toggle="modal"
-           data-bs-target="#sign_up_modal">
-            Sign Up</a>
-        or Connect With Social Media
-
-    </div>
-    <div class="twitter">
-        <a href="#"><i class="fab fa-twitter"></i>Sign in With Twitter</a>
-    </div>
-    <div class="facebook">
-        <a href="#"><i class="fab fa-facebook-f"></i>Sign in With Facebook</a>
-    </div>
-</div>
-
-&lt;!&ndash; Modal &ndash;&gt;
-<div class="modal fade" id="sign_up_modal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class = "modal-content container" id = "sign_up_modal">
-            <div class="modal-body">
-                <div class = "login_form">
-                    <div class="title">Sign Up</div>
-                    <div class="input-box underline">
-                        <input type="text" id = "sign_up_nickname"placeholder="Enter Your Nickname" required>
-                        <div class="underline"></div>
-                    </div>
-                    <div class="input-box underline">
-                        <input type="text" id = "sign_up_id" placeholder="Enter Your Id" required>
-                        <div class="underline"></div>
-                    </div>
-                    <div class="input-box">
-                        <input type="password" id = "sign_up_password" placeholder="Enter Your Password" required>
-                        <div class="underline"></div>
-                    </div>
-
-                    <div class="input-box button" style="float: left">
-                        <input type="submit" name="" value="Sing Up" id = "sign_up_input" onclick="signup()">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
--->
 
 <script>
     {
