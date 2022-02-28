@@ -57,8 +57,6 @@ function updateComment(){
         }
         else alert("댓글 수정 오류");
     })
-
-
 }
 
 function changeUpdateMode(){
@@ -72,13 +70,24 @@ function changeUpdateMode(){
 
     content.removeAttribute('readonly');
 
-    checkBtn.classList.toggle("invisible");
-    cancleBtn.classList.toggle("invisible");
+    checkBtn.classList.toggle('invisible');
+    cancleBtn.classList.toggle('invisible');
 
-    editBtn.remove();
-    deleteBtn.remove();
-
-    checkBtn.addEventListener("click", () => updateComment());
+    editBtn.style.display = 'none';
+    deleteBtn.style.display = 'none';
 
 }
 
+function changeNormalMode(){
+    const checkBtn = document.querySelector('#comment_ok_btn');
+    const cancleBtn = document.querySelector('#comment_cancle_btn');
+
+    const editBtn = document.querySelector('#comment_edit_btn');
+    const deleteBtn = document.querySelector('#comment_delete_btn');
+
+    checkBtn.classList.toggle('invisible');
+    cancleBtn.classList.toggle('invisible');
+
+    editBtn.style.display = 'inline';
+    deleteBtn.style.display = 'inline';
+}
