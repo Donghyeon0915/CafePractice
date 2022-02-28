@@ -74,6 +74,10 @@ img{
     margin-top: 2rem;
 }
 
+.drop__data{
+    display: flex;
+    align-items: center;
+}
 .comment-drop__container{
     row-gap: 3rem;
     padding: 2rem;
@@ -84,22 +88,18 @@ img{
     /* box-shadow: 4px 4px 16px #E1E1E1; */
 }
 
-.comment-drop__card, .drop__data{
+.comment-drop__card{
     display: flex;
     align-items: center;
-
 }
 
 .comment-drop__card{
     width: 61.8%;
     justify-content: space-between;
     padding: 2rem 1.25rem 2rem .75rem;
-    margin: 0 auto;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
     background: var(--cardtable-background-color);
     backdrop-filter: blur(20px);
-    /*box-shadow: 4px 4px 10px var(--shadow-color),
-    -2px -2px 16px var(--shadow-color-sub);*/
     border-radius: 0.5rem;
 }
 
@@ -138,6 +138,26 @@ img{
 .drop__title{
     margin-left: 2rem;
 }
+
+.drop__comment{
+    margin-left: 2rem;
+
+}
+
+.drop__comment textarea{
+    width: 500px;
+    height: auto;
+    outline: none;
+    resize: none;
+    overflow: auto;
+
+    font-size: 16px;
+    border: none;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 0.3rem;
+    color: var(--text-color);
+}
+
 /*-------------------------- Class name for the chosen item --------------------------*/
 
 .sortable-chosen{

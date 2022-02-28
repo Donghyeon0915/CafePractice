@@ -1,28 +1,10 @@
-/*
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
-}
-body{
-    display: grid; !* grid *!
-    !*height: 100vh;*!
-    width: 100%;
-    margin-top: 10rem;
-    place-items: center;
-    background: linear-gradient(to right, #005999 0%, #8bd2e5 100%);
-}*/
-
-
 body {
     /*background: linear-gradient(45deg, #4f4f4f, #3984d9); !*linear-gradient(45deg, #FC466B, #3F5EFB);*!*/
     background-image: url("../image/background.jpg");
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
 }
+
 body::after{
     content:'';
     display: block;
@@ -168,6 +150,4 @@ a, input:focus, select:focus, textarea:focus, button:focus {
     outline: none;
 }
 
-.invisible{
-    display: none;
-}
+

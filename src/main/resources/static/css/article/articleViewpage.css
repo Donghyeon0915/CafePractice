@@ -82,3 +82,13 @@ body.dark{
 .hidden{
 	display: none;
 }
+
+.drop__soc{
+	display: inline;
+	color: rgba(255,255,255, 0.5);
+}
+
+.drop__soc:hover{
+	color: rgba(255,255,255);
+}
+

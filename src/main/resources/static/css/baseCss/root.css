@@ -12,7 +12,7 @@
 
     /*=====-------------------------- Text Colors --------------------------=====* (card_table)*/
     --text-color: rgba(255,255,255,0.7);
-    --name-text-color: #000000;
+    --name-text-color: #ffffff;
     --title-text-color: rgba(189, 189, 189, 0.6);
 
     --first-color-lighten: #F8F8FC;
@@ -24,5 +24,9 @@
     --card-background-color: rgba(255, 255, 255, 0.3); /*rgba(210, 210, 210, 0.4);*/
     --card-footer-color:#fafafa; /*rgba(210, 210, 210, 0.4); /*#fafafa;*/
 
-    --cardtable-background-color: rgba(255, 255, 255, 0.3);  /* #ffffff; /*rgba(210, 210, 210, 0.4);*/
+    --cardtable-background-color: rgba(255, 255, 255, 0.05);  /* #ffffff; /*rgba(210, 210, 210, 0.4);*/
+}
+
+.invisible{
+    display: none;
 }
