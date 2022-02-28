@@ -1,12 +1,12 @@
 package com.example.cafeproject.web.service;
 
 
-import com.example.cafeproject.web.dto.CommentDto;
+import com.example.cafeproject.web.dto.comment.CommentDto;
+import com.example.cafeproject.web.dto.comment.CommentUpdateDto;
 import com.example.cafeproject.web.entity.Article;
 import com.example.cafeproject.web.entity.Comment;
 import com.example.cafeproject.web.repository.ArticleRepository;
 import com.example.cafeproject.web.repository.CommentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -48,6 +48,16 @@ public class CommentService {
         for (CommentDto comment : commentDtos) commentRepository.deleteById(comment.getId());
 
         return commentDtos;
+    }
+
+    @Transactional
+    public CommentDto update(CommentUpdateDto requestDto){
+        Comment comment = commentRepository.findById(requestDto.getId())
+                .orElseThrow(() -> new IllegalArgumentException("해당 ID의 댓글이 없습니다."));
+
+        comment.patch(requestDto);
+
+        return CommentDto.createCommentDto(comment);
     }
 
     public List<CommentDto> getCommentList(Long articleId){

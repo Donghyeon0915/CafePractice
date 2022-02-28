@@ -1,13 +1,10 @@
 package com.example.cafeproject.web.service;
 
-import com.example.cafeproject.web.dto.CommentDto;
 import com.example.cafeproject.web.dto.article.ArticleFormDto;
 import com.example.cafeproject.web.dto.article.ArticleDto;
 import com.example.cafeproject.web.entity.Article;
-import com.example.cafeproject.web.entity.Comment;
 import com.example.cafeproject.web.repository.ArticleRepository;
 import com.example.cafeproject.web.repository.CommentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;

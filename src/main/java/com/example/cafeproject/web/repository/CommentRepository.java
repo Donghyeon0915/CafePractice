@@ -1,6 +1,5 @@
 package com.example.cafeproject.web.repository;
 
-import com.example.cafeproject.web.dto.CommentDto;
 import com.example.cafeproject.web.entity.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

@@ -1,6 +1,5 @@
-package com.example.cafeproject.web.dto;
+package com.example.cafeproject.web.dto.comment;
 
-import com.example.cafeproject.web.entity.Article;
 import com.example.cafeproject.web.entity.Comment;
 import lombok.*;
 

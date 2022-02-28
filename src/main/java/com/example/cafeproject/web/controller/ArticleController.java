@@ -1,12 +1,11 @@
 package com.example.cafeproject.web.controller;
 
 
-import com.example.cafeproject.web.dto.CommentDto;
+import com.example.cafeproject.web.dto.comment.CommentDto;
 import com.example.cafeproject.web.dto.article.ArticleDto;
 import com.example.cafeproject.web.service.ArticleService;
 import com.example.cafeproject.web.service.CommentService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
