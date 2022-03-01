@@ -31,18 +31,19 @@ function createdComment(){
     })
 }
 
-function updateComment(){
-    const id = document.querySelector('#hidden_comment_id');
-    const articleId = document.querySelector('#hidden_article_id').value;
-    const content = document.querySelector('#comment_content');
+function updateComment(event){
+    const target = event.currentTarget.parentNode.parentNode;
 
+    const articleId = document.querySelector('#hidden_article_id').value;
+    const id = target.querySelector('#hidden_comment_id');
+    const content = target.querySelector('#comment_content');
+    
     const data = {
         id: id.value,
         content: content.value
     }
 
     const url = `/api/articles/${articleId}/comments`;
-    alert(url);
 
     fetch(url,{
         method: "PATCH",
@@ -59,14 +60,18 @@ function updateComment(){
     })
 }
 
-function changeUpdateMode(){
-    const content = document.querySelector('#comment_content');
+function changeUpdateMode(event){
+    const target = event.currentTarget.parentNode.parentNode;
 
-    const checkBtn = document.querySelector('#comment_ok_btn');
-    const cancleBtn = document.querySelector('#comment_cancle_btn');
+    alert(target.classList.toString());
 
-    const editBtn = document.querySelector('#comment_edit_btn');
-    const deleteBtn = document.querySelector('#comment_delete_btn');
+    const content = target.querySelector('#comment_content');
+
+    const checkBtn = target.querySelector('#comment_ok_btn');
+    const cancleBtn = target.querySelector('#comment_cancle_btn');
+
+    const editBtn = target.querySelector('#comment_edit_btn');
+    const deleteBtn = target.querySelector('#comment_delete_btn');
 
     content.removeAttribute('readonly');
 
@@ -78,12 +83,14 @@ function changeUpdateMode(){
 
 }
 
-function changeNormalMode(){
-    const checkBtn = document.querySelector('#comment_ok_btn');
-    const cancleBtn = document.querySelector('#comment_cancle_btn');
+function changeNormalMode(event){
+    const target = event.currentTarget.parentNode.parentNode;
 
-    const editBtn = document.querySelector('#comment_edit_btn');
-    const deleteBtn = document.querySelector('#comment_delete_btn');
+    const checkBtn = target.querySelector('#comment_ok_btn');
+    const cancleBtn = target.querySelector('#comment_cancle_btn');
+
+    const editBtn = target.querySelector('#comment_edit_btn');
+    const deleteBtn = target.querySelector('#comment_delete_btn');
 
     checkBtn.classList.toggle('invisible');
     cancleBtn.classList.toggle('invisible');
