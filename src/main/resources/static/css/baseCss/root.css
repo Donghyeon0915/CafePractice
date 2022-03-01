@@ -21,7 +21,7 @@
     --shadow-color-sub: #fff;
 
     /*=====-------------------------- Colors --------------------------=====* (articleViewpage)*/
-    --card-background-color: rgba(255, 255, 255, 0.3); /*rgba(210, 210, 210, 0.4);*/
+    --card-background-color: rgba(255, 255, 255, 0.05); /*rgba(210, 210, 210, 0.4);*/
     --card-footer-color:#fafafa; /*rgba(210, 210, 210, 0.4); /*#fafafa;*/
 
     --cardtable-background-color: rgba(255, 255, 255, 0.05);  /* #ffffff; /*rgba(210, 210, 210, 0.4);*/

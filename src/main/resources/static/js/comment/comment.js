@@ -60,7 +60,7 @@ function updateComment(event){
 }
 
 function deleteComment(event){
-    if(authorCheck(event)) {
+    if(!authorCheck(event)) {
         alert("댓글 작성자만 삭제 할 수 있습니다.");
         return;
     }
@@ -86,7 +86,7 @@ function deleteComment(event){
 function changeUpdateMode(event){
     const target = event.currentTarget.parentNode.parentNode;
 
-    if(authorCheck(event)) {
+    if(!authorCheck(event)) {
         alert("댓글 작성자만 수정 할 수 있습니다.");
         return;
     }

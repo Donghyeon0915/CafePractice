@@ -36,14 +36,19 @@
 									</a>
 									<p class="">Web developer</p>
 								</div>
-                                <div>
-                                    <button type="button"
+                                <div class = "article_icon_btns">
+                                    <!-- 게시글 삭제 버튼 -->
+                                    <div id="article_delete_btn" onclick="deleteArticle()">
+                                        <i class='bx bx-message-alt-x bx-md'></i>
+                                    </div>
+
+                                    <!-- 게시글 수정 버튼 -->
+                                    <div type="button"
                                             id="article_edit_btn"
-                                            class="btn btn-outline-primary"
                                             data-bs-toggle="modal"
-                                            data-bs-target="#article-update-modal"
-                                    >수정</button>
-                                    <button class="btn btn-outline-danger" id="article_delete_btn" onclick="deleteArticle()">삭제</button>
+                                            data-bs-target="#article-update-modal">
+                                        <i class='bx bx-edit-alt bx-md'></i>
+                                    </div>
                                 </div>
 							</div>
 							<div class="job-card_content-mid">
@@ -61,7 +66,7 @@
 						<div class="job-card__footer">
 							<!-- <p class="mb-1 mt-1 text-muted">Posted: 2 days ago</p> -->
                             <input type="text" id = "input_comment_content" placeholder="댓글 입력">
-                            <button class="btn btn-primary" onclick="createdComment()">등록</button>
+                            <div onclick="createdComment()"><i class='bx bx-check-double bx-lg'></i></div>
 						</div>
 					</div>
                     {{/articleDto}}
@@ -95,7 +100,7 @@
                             <div class="drop__soc invisible" id = "comment_cancle_btn"><i class='bx bx-redo bx-flip-horizontal bx-sm'></i></div>
 
                             <div class="drop__soc" id = "comment_edit_btn"><i class='bx bx-edit-alt bx-sm'></i></div>
-                            <div class="drop__soc" id = "comment_delete_btn"><i class='bx bx-comment-x bx-sm'></i></div>
+                            <div class="drop__soc" id = "comment_delete_btn"><i class='bx bx-message-alt-x bx-sm'></i></div>
                         </div>
                     </div>
                 {{/commentDtos}}
@@ -162,7 +167,7 @@
         })
     }
 </script>
-<script src="/js/view/articleView.js"></script>
 <script src="/js/comment/comment.js"></script>
+<script src="/js/view/articleView.js"></script>
 <script src="/js/article/article.js"></script>
 {{>layout/footer}}

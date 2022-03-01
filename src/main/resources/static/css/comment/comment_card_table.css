@@ -99,7 +99,7 @@ img{
     padding: 2rem 1.25rem 2rem .75rem;
     margin: 0 auto 2rem;
     background: var(--cardtable-background-color);
-    backdrop-filter: blur(20px);
+    /*backdrop-filter: blur(20px);*/
     border-radius: 0.5rem;
 }
 
