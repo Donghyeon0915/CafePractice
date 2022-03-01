@@ -37,7 +37,7 @@ function updateComment(event){
     const articleId = document.querySelector('#hidden_article_id').value;
     const id = target.querySelector('#hidden_comment_id');
     const content = target.querySelector('#comment_content');
-    
+
     const data = {
         id: id.value,
         content: content.value
@@ -57,34 +57,49 @@ function updateComment(event){
             window.location.reload();
         }
         else alert("댓글 수정 오류");
-    })
+    });
 }
 
+function deleteComment(event){
+    const target = event.currentTarget.parentNode.parentNode;
+
+    const id = target.querySelector('hidden_comment_id');
+
+
+}
 function changeUpdateMode(event){
     const target = event.currentTarget.parentNode.parentNode;
 
-    alert(target.classList.toString());
+    const nickname = target.querySelector("#hidden_comment_author").value;
+    const user = document.querySelector('#hidden_user_nickname').value;
+
+    if(nickname != user) {
+        alert("댓글 작성자만 수정 할 수 있습니다.");
+        return;
+    }
 
     const content = target.querySelector('#comment_content');
+    const save_content = target.querySelector('#save_content');
 
-    const checkBtn = target.querySelector('#comment_ok_btn');
-    const cancleBtn = target.querySelector('#comment_cancle_btn');
-
-    const editBtn = target.querySelector('#comment_edit_btn');
-    const deleteBtn = target.querySelector('#comment_delete_btn');
+    setUpdateBtnVisible(event, 'invisible', 'none');
 
     content.removeAttribute('readonly');
-
-    checkBtn.classList.toggle('invisible');
-    cancleBtn.classList.toggle('invisible');
-
-    editBtn.style.display = 'none';
-    deleteBtn.style.display = 'none';
-
+    save_content.value = content.value;
 }
 
 function changeNormalMode(event){
     const target = event.currentTarget.parentNode.parentNode;
+    const content = target.querySelector('#comment_content');
+    const save_content = target.querySelector('#save_content');
+
+    setUpdateBtnVisible(event, 'invisible', 'inline');
+
+    content.setAttribute('readonly', 'readonly');
+    content.value = save_content.value;
+}
+
+function setUpdateBtnVisible(eventTarget, attr1, attr2){
+    const target = eventTarget.currentTarget.parentNode.parentNode;
 
     const checkBtn = target.querySelector('#comment_ok_btn');
     const cancleBtn = target.querySelector('#comment_cancle_btn');
@@ -92,9 +107,9 @@ function changeNormalMode(event){
     const editBtn = target.querySelector('#comment_edit_btn');
     const deleteBtn = target.querySelector('#comment_delete_btn');
 
-    checkBtn.classList.toggle('invisible');
-    cancleBtn.classList.toggle('invisible');
+    checkBtn.classList.toggle(attr1);
+    cancleBtn.classList.toggle(attr1);
 
-    editBtn.style.display = 'inline';
-    deleteBtn.style.display = 'inline';
+    editBtn.style.display = attr2;
+    deleteBtn.style.display = attr2;
 }

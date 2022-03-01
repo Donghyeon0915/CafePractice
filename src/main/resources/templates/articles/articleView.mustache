@@ -76,18 +76,20 @@
                 {{#commentDtos}}
                     <div class="comment-drop__card">
                         <input id="hidden_comment_id" hidden value="{{id}}">
+
                         <div class="drop__data">
                             <img src="/image/user.png" alt="" class="drop__img">
                             <div>
                                 <h1 class="drop__name">{{nickname}}</h1>
+                                <input id = "hidden_comment_author" hidden value = "{{nickname}}">
                                 <span class="drop__proffession">Web Developer</span>
                             </div>
 
                             <div class="drop__comment">
                                 <textarea id = "comment_content" readonly>{{content}}</textarea>
+                                <textarea id = "save_content" readonly hidden></textarea>
                             </div>
                         </div>
-                        <input type="hidden" id = "article_id" value = "id">
                         <div>
                             <div class="drop__soc invisible" id = "comment_ok_btn"><i class='bx bx-check bx-sm'></i></div>
                             <div class="drop__soc invisible" id = "comment_cancle_btn"><i class='bx bx-redo bx-flip-horizontal bx-sm'></i></div>
@@ -150,6 +152,13 @@
 
         cancleBtns.forEach(cancleBtn => {
             cancleBtn.addEventListener("click", (event) => changeNormalMode(event));
+        })
+    }
+    {
+        const deleteBtns = document.querySelectorAll('#comment_delete_btn');
+
+        deleteBtns.forEach(deleteBtn => {
+            deleteBtn.addEventListener("click", (event) => deleteComment(event));
         })
     }
 </script>
