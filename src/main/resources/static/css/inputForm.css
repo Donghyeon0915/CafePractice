@@ -155,7 +155,8 @@
 }
 
 #new_article_modal, #update_article_modal{
-    background: #fff;
+    background: white;
+    /*backdrop-filter: blur(10px);*/
     max-width: 900px;
     width: 100%;
     padding: 25px 30px;

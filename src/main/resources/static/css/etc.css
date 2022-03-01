@@ -1,5 +1,12 @@
 .writing_btn{
+    color: rgba(255,255,255,0.4);
+    font-size: 1.5rem;
     position: fixed;
-    left: 88%;
+    left: 75%;
     top: 90%;
+}
+
+.writing_btn:hover{
+    color: white;
+    cursor: pointer;
 }
