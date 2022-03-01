@@ -60,6 +60,16 @@ public class CommentService {
         return CommentDto.createCommentDto(comment);
     }
 
+    @Transactional
+    public CommentDto delete(Long commentId){
+        Comment target = commentRepository.findById(commentId)
+                .orElseThrow(() -> new IllegalArgumentException("해당 ID의 댓글이 없습니다."));
+
+        commentRepository.delete(target);
+
+        return CommentDto.createCommentDto(target);
+    }
+
     public List<CommentDto> getCommentList(Long articleId){
         return commentRepository.findByArticleId(articleId)
                 .stream()

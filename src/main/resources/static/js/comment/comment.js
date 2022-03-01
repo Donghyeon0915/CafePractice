@@ -14,7 +14,7 @@ function createdComment(){
         content: content
     }
 
-    const url = `/api/articles/${articleId}/comments`;
+    const url = `/api/comments`;
 
     fetch(url,{
         method: "POST",
@@ -34,7 +34,6 @@ function createdComment(){
 function updateComment(event){
     const target = event.currentTarget.parentNode.parentNode;
 
-    const articleId = document.querySelector('#hidden_article_id').value;
     const id = target.querySelector('#hidden_comment_id');
     const content = target.querySelector('#comment_content');
 
@@ -43,7 +42,7 @@ function updateComment(event){
         content: content.value
     }
 
-    const url = `/api/articles/${articleId}/comments`;
+    const url = `/api/comments`;
 
     fetch(url,{
         method: "PATCH",
@@ -61,19 +60,33 @@ function updateComment(event){
 }
 
 function deleteComment(event){
+    if(authorCheck(event)) {
+        alert("댓글 작성자만 삭제 할 수 있습니다.");
+        return;
+    }
+
+    if(!confirm("댓글을 삭제 하시겠습니까 ?")) return;
+
     const target = event.currentTarget.parentNode.parentNode;
 
-    const id = target.querySelector('hidden_comment_id');
+    const commentId = target.querySelector('#hidden_comment_id').value;
+    const url = `/api/comments/${commentId}`;
 
-
+    fetch(url, {
+        method: "DELETE"
+    }).then(response => {
+        if(response.ok){
+            alert("댓글 삭제가 완료 되었습니다.");
+            target.remove();
+        }
+        else alert("댓글 삭제 실패");
+    })
 }
+
 function changeUpdateMode(event){
     const target = event.currentTarget.parentNode.parentNode;
 
-    const nickname = target.querySelector("#hidden_comment_author").value;
-    const user = document.querySelector('#hidden_user_nickname').value;
-
-    if(nickname != user) {
+    if(authorCheck(event)) {
         alert("댓글 작성자만 수정 할 수 있습니다.");
         return;
     }
@@ -85,6 +98,15 @@ function changeUpdateMode(event){
 
     content.removeAttribute('readonly');
     save_content.value = content.value;
+}
+
+function authorCheck(eventTarget){
+    const target = eventTarget.currentTarget.parentNode.parentNode;
+
+    const nickname = target.querySelector("#hidden_comment_author").value;
+    const user = document.querySelector('#hidden_user_nickname').value;
+
+    return nickname == user ? true : false;
 }
 
 function changeNormalMode(event){
