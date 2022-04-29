@@ -30,14 +30,15 @@ public class ArticleController {
 
     @GetMapping("/articles")
     public String articles(@CookieValue(name = "loginUser") String nickname, Model model){
-        //@RequestParam @Nullable로도 Null을 받을 수 있다.
-        //nickname이 null이 아니라면
+        log.info("userid = " + nickname);
+        //@RequestParam @Nullable로 Null을 받을 수 있다.
+        //nickname이 null이 아닌 경우
         if(!"".equals(nickname)) model.addAttribute("userNickname", nickname);
 
         List<ArticleDto> articles = articleService.getArticleList();
         model.addAttribute("articles", articles);
 
-        return "/articles/articleIndex";
+        return "articles/articleIndex";
     }
 
     @GetMapping("/articles/{id}")
@@ -52,7 +53,7 @@ public class ArticleController {
         model.addAttribute("commentDtos", commentDtos);
         model.addAttribute("userNickname", nickname);
 
-        return "/articles/articleView";
+        return "articles/articleView";
     }
 
 
